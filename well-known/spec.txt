@@ -1,0 +1,9 @@
+Well-Known URI spec per RFC5785
+
+* URI suffix:  assetlinks.json
+
+* Change controller: Google Inc.  Email: well-known-statements@google.com
+
+* Specification document(s):  specification.md
+
+* Related information:  details.md
