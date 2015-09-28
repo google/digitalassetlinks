@@ -29,10 +29,10 @@ antisymmetric or antitransitive.
 A **statement** *S(r, a, b)* is an assertion that the relation *r* holds for the
 ordered pair of assets *(a, b)*.
 
-For example, taking *r =* "delegates permission to view user's location", *a =*
-New York Times mobile app, *b =* nytimes.com website, *S(r, a, b)* would be an
-assertion that "the New York Times mobile app delegates its ability to use the
-user's location to the nytimes.com website".
+For example, taking *r =* "delegates permission to handle the site's URLs", *a
+=* nytimes.com website, *b =* New York Times mobile app, *S(r, a, b)* would be
+an assertion that "the nytimes.com website delegates its ability to handle URLs
+to the New York Times mobile app".
 
 A statement *S(r, a, b)* is considered **reliable** if we have confidence that
 the statement is true; the exact criterion depends on the kind of statement,
