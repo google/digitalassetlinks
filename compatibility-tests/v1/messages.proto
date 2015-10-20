@@ -1,0 +1,62 @@
+// This file contains a subset of the data model used by the Digital Asset Links
+// API.  Please see the [Digital Asset
+// Links](https://developers.google.com/digital-asset-links/reference/rest/)
+// documentation for detailed descriptions of the messages and fields in here.
+syntax = "proto3";
+
+package google.digitalassetlinks.v1;
+
+option java_package = "com.google.digitalassetlinks.v1";
+option java_outer_classname = "MessagesProto";
+option objc_class_prefix = "GDALP";
+
+message Statement {
+  Asset source = 1;
+  string relation = 2;
+  Asset target = 3;
+}
+
+message Asset {
+  oneof Asset {
+    WebAsset web = 1;
+    AndroidAppAsset android_app = 2;
+  }
+}
+
+message WebAsset {
+  string site = 1;
+}
+
+message AndroidAppAsset {
+  string package_name = 1;
+
+  message CertificateInfo {
+    // SHA-256 fingerprint, e.g. `14:6D:E9:83:C5:73:06:50:D8:EE:B9:95:2F:34:FC
+    // :64:16:A0:83:42:E6:1D:BE:A8:8A:04:96:B2:3F:CF:44:E5`.
+    string sha256_fingerprint = 1;
+  }
+
+  CertificateInfo certificate = 2;
+}
+
+message CheckRequest {
+  Asset source = 5;
+  string relation = 2;
+  Asset target = 6;
+}
+
+message CheckResponse {
+  bool linked = 1;
+  string debug_string = 3;
+}
+
+message ListRequest {
+  Asset source = 1;
+  string relation = 2;
+}
+
+message ListResponse {
+  repeated Statement statements = 1;
+  string debug_string = 3;
+}
+

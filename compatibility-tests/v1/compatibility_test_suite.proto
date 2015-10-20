@@ -1,0 +1,139 @@
+// This file defines the schema for a shared test suite used to make sure that
+// implementations of the Digital Asset Links protocol remain compatible with
+// each other.
+
+syntax = "proto3";
+
+package google.digitalassetlinks.v1.testproto;
+
+option java_package = "com.google.digitalassetlinks.v1.testproto";
+option java_outer_classname = "TestProto";
+option objc_class_prefix = "GDALP";
+
+import "messages.proto";
+
+// Models Web content served at a specific URL.  If the URL uses standard ports
+// and belongs to the domain "digitalassetlinks.org", the content will also be
+// served on the public internet.
+//
+// Depending on the type of test being run, an implementation may use the
+// publicly served content or serve the content using a mock fetcher.
+message HostedWebContent {
+  // The URL at which the content is served.
+  optional string url = 1;
+
+  // The body of the response to serve (always served with status code 200 OK as
+  // application/json).
+  optional string body = 2;
+}
+
+// Models a statement list contained in an Android APK package.
+message AndroidAPKContent {
+  // The package name (e.g., org.digitalassetlinks.sampleapp).
+  optional string package_name = 1;
+
+  // The fingerprint of the APK's signing certificate.  See the CertificateInfo
+  // message for the expected format:
+  // https://developers.google.com/digital-asset-links/reference/rest/v1/Asset#CertificateInfo
+  optional string cert_fingerprint = 2;
+
+  // The statement list (i.e., the contents of the <string
+  // name="asset_statements"> tag in the APK).
+  optional string assets_statements = 3;
+}
+
+// The result status of an API request.
+enum QueryOutcome {
+  TEST_OUTCOME_UNSPECIFIED = 0;
+
+  // The query was parsed successfully and a response was successfully served.
+  // No errors happened that could have affected the response.
+  SUCCESS = 1;
+
+  // The query could not be parsed successfully, for example because a required
+  // field was missing or contained invalid data.  In other words, the
+  // implementation was able to determine that the query can never have a
+  // successful answer, just by looking at the query itself and without ever
+  // fetching any data from external sources.
+  QUERY_PARSING_ERROR = 2;
+
+  // The query was parsed successfully and it passed static analysis.  However,
+  // an error occurred when the implementation tried to fetch necessary data
+  // from external sources.  For example, such an error occurs when the
+  // assetlinks.json file served on a web site is corrupt.
+  FETCH_ERROR = 3;
+}
+
+// A single test case for testing the Check() API.
+message CheckTestCase {
+  // A description of the test case.
+  optional string name = 1;
+
+  // REQUIRED
+  optional google.digitalassetlinks.v1.CheckRequest request = 2;
+
+  // The expected outcome of the query (i.e., success or failure).
+  optional QueryOutcome outcome = 3;
+
+  // Expected value of the 'linked' field in the response.
+  optional bool response = 4;
+
+  // If the expected outcome is not a full success, the error or notification
+  // message in the response should match this optional regular expression.
+  optional string error_message_regex = 5;
+}
+
+// A single test case for testing the List() API.
+message ListTestCase {
+  // A description of the test case.
+  optional string name = 1;
+
+  // REQUIRED
+  optional google.digitalassetlinks.v1.ListRequest request = 2;
+
+  // The expected outcome of the query (i.e., success or failure).
+  optional QueryOutcome outcome = 3;
+
+  // Expected response from the API.  Statements may appear in any order.
+  repeated google.digitalassetlinks.v1.Statement response = 4;
+
+  // If the expected outcome is not a full success, the error or notification
+  // message in the response should match this optional regular expression.
+  optional string error_message_regex = 5;
+}
+
+// A group of test cases that all share the same set of mock web and Android
+// contents.
+message TestGroup {
+  // A description of the test group.
+  optional string name = 1;
+
+  // The set of HostedWebContent instances representing the result of
+  // fetching various URLs.
+  repeated HostedWebContent web_content = 2;
+
+  // The set of AndroidAPKContent instances representing the contents of
+  // various Android APKs.
+  repeated AndroidAPKContent android_content = 5;
+
+  // Each test case will be evaluated independently, and the test framework
+  // ensures that the specified web_content and android_content are available
+  // to the implementation.
+  //
+  // The test group passes if all the check_statements_tests
+  // and list_statements_tests pass.
+  repeated CheckTestCase check_statements_tests = 3;
+  repeated ListTestCase list_statements_tests = 4;
+
+  // By default, the web_content data of test groups is hosted publicly on the
+  // internet, and android_content data is hosted by the Digital Asset Links
+  // API.  This flag indicates test groups where that is not the case.
+  optional bool stub_environment_only = 6;
+
+  // Next: 7
+}
+
+// A set of test groups that together comprise a test suite.
+message CompatibilityTestSuite {
+  repeated TestGroup test_group = 1;
+}
