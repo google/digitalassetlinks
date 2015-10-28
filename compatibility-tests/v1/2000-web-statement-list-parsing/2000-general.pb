@@ -70,7 +70,7 @@ test_group: {
       source: { web: { site: 'https://source-comptest2002.digitalassetlinks.org' } }
     }
     outcome: FETCH_ERROR
-    error_message_regex: 'Empty statement list encountered'
+    error_message_regex: 'No statements were found'
     # No response field because we expect the list to be empty.
   }
 }
