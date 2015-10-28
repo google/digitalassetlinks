@@ -299,3 +299,36 @@ test_group: {
   }
 }
 
+test_group: {
+  name: 'comptest5009: secure include files cannot include insecure include files'
+
+  web_content: {
+    url: 'http://source-comptest5009.digitalassetlinks.org/.well-known/assetlinks.json'
+    body: '[{"include": "https://include1-comptest5009.digitalassetlinks.org/include.json"}]'
+  }
+
+  web_content: {
+    url: 'https://include1-comptest5009.digitalassetlinks.org/include.json'
+    body: '[{"include": "http://include1-comptest5009.digitalassetlinks.org/include.json"}]'
+  }
+
+  web_content: {
+    url: 'http://include2-comptest5009.digitalassetlinks.org/include.json'
+    body: '[{"relation": ["delegate_permission/common.handle_all_urls"],       '
+          '  "target": {"namespace": "android_app",                            '
+          '             "package_name": "org.digitalassetlinks.comptest5009",  '
+          '     "sha256_cert_fingerprints":                                    '
+          '           ["10:39:38:EE:45:37:E5:9E:8E:E7:92:F6:54:50:4F:B8:'
+                       '34:6F:C6:B3:46:D0:BB:C4:41:5F:C3:39:FC:FC:8E:C1"]}}]   '
+  }
+
+  list_statements_tests: {
+    request: {
+      source: { web: { site: 'http://source-comptest5009.digitalassetlinks.org' } }
+      relation: 'delegate_permission/common.handle_all_urls'
+    }
+    outcome: FETCH_ERROR
+    error_message_regex: 'Insecure include file included by secure include file'
+  }
+}
+
