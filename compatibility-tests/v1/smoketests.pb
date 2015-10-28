@@ -553,7 +553,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     response: true
-    error_message_regex: 'Could not parse manifest'
+    error_message_regex: 'Could not parse (manifest|statement list)'
   }
 }
 

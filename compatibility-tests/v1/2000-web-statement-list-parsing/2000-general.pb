@@ -70,7 +70,7 @@ test_group: {
       source: { web: { site: 'https://source-comptest2002.digitalassetlinks.org' } }
     }
     outcome: FETCH_ERROR
-    error_message_regex: 'No statements were found'
+    error_message_regex: 'Empty statement list encountered'
     # No response field because we expect the list to be empty.
   }
 }
@@ -98,7 +98,7 @@ test_group: {
       target: { web: { site: 'https://target-comptest2003.digitalassetlinks.org' } }
     }
     outcome: FETCH_ERROR
-    error_message_regex: 'Could not parse manifest'
+    error_message_regex: 'Could not parse (manifest|statement list)'
     response: true
   }
 
@@ -116,7 +116,7 @@ test_group: {
     }
     response: true
     outcome: FETCH_ERROR
-    error_message_regex: 'Could not parse manifest'
+    error_message_regex: 'Could not parse (manifest|statement list)'
   }
 
 }
@@ -251,7 +251,7 @@ test_group: {
       source: { web: { site: 'https://source-comptest2010.digitalassetlinks.org' } }
     }
     outcome: FETCH_ERROR
-    error_message_regex: 'Could not parse manifest'
+    error_message_regex: 'Could not parse (manifest|statement list)'
   }
 }
 
