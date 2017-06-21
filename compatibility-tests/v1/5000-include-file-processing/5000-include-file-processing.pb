@@ -332,3 +332,38 @@ test_group: {
   }
 }
 
+test_group: {
+  name: 'comptest5010: invalid include URL'
+
+  web_content: {
+    url: 'https://source-comptest5010.digitalassetlinks.org/.well-known/assetlinks.json'
+    body: '[{"include": "https://target.digitalassetlinks.org:999999"}]'
+  }
+
+  list_statements_tests: {
+    request: {
+      source: { web: { site: 'https://source-comptest5010.digitalassetlinks.org' } }
+      relation: 'delegate_permission/common.handle_all_urls'
+    }
+    outcome: FETCH_ERROR
+    error_message_regex: 'not a valid URL'
+  }
+}
+
+test_group: {
+  name: 'comptest5011: invalid protocol of include URL'
+
+  web_content: {
+    url: 'https://source-comptest5011.digitalassetlinks.org/.well-known/assetlinks.json'
+    body: '[{"include": "mailto://user@digitalassetlinks.org"}]'
+  }
+
+  list_statements_tests: {
+    request: {
+      source: { web: { site: 'https://source-comptest5011.digitalassetlinks.org' } }
+      relation: 'delegate_permission/common.handle_all_urls'
+    }
+    outcome: FETCH_ERROR
+    error_message_regex: 'non-HTTP URL'
+  }
+}
