@@ -118,6 +118,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'no site field'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -136,6 +137,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'not a valid URL'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -154,6 +156,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'non-HTTP URL'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -172,6 +175,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'login information'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -190,6 +194,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'query parameters'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -208,6 +213,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'fragment identifiers'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -226,6 +232,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'cannot contain a path'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -244,6 +251,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'cannot contain a path'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -262,6 +270,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'cannot contain a path'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -280,6 +289,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'cannot contain a path'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -298,5 +308,6 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: '(Invalid site|Url is not well formatted)'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }

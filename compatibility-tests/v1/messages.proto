@@ -10,6 +10,30 @@ option java_package = "com.google.digitalassetlinks.v1";
 option java_outer_classname = "MessagesProto";
 option objc_class_prefix = "GDALP";
 
+enum ErrorCode {
+  ERROR_CODE_UNSPECIFIED = 0;
+  // Unable to parse query.
+  ERROR_CODE_INVALID_QUERY = 1;
+  // Unable to fetch the asset links data.
+  ERROR_CODE_FETCH_ERROR = 2;
+  // Invalid HTTPS certificate .
+  ERROR_CODE_FAILED_SSL_VALIDATION = 3;
+  // HTTP redirects (e.g, 301) are not allowed.
+  ERROR_CODE_REDIRECT = 4;
+  // Asset links data exceeds maximum size.
+  ERROR_CODE_TOO_LARGE = 5;
+  // Can't parse HTTP response.
+  ERROR_CODE_MALFORMED_HTTP_RESPONSE = 6;
+  // HTTP Content-type should be application/json.
+  ERROR_CODE_WRONG_CONTENT_TYPE = 7;
+  // JSON content is malformed.
+  ERROR_CODE_MALFORMED_CONTENT = 8;
+  // A secure asset includes an insecure assert (security downgrade).
+  ERROR_CODE_SECURE_ASSET_INCLUDES_INSECURE = 9;
+  // Too many includes (maybe a loop).
+  ERROR_CODE_FETCH_BUDGET_EXHAUSTED = 10;
+}
+
 message Statement {
   Asset source = 1;
   string relation = 2;
@@ -59,4 +83,3 @@ message ListResponse {
   repeated Statement statements = 1;
   string debug_string = 3;
 }
-

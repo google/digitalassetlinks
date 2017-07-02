@@ -40,6 +40,7 @@ test_group: {
     }
     outcome: QUERY_PARSING_ERROR
     error_message_regex: 'Invalid \'detail\' field in relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
     response: false
   }
 

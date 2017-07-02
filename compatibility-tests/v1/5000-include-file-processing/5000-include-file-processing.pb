@@ -58,6 +58,7 @@ test_group: {
     response: true
     outcome: FETCH_ERROR
     error_message_regex: 'not valid JSON'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -106,6 +107,7 @@ test_group: {
     response: false
     outcome: FETCH_ERROR
     error_message_regex: 'not valid JSON'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 
   check_statements_tests: {
@@ -123,6 +125,7 @@ test_group: {
     response: true
     outcome: FETCH_ERROR
     error_message_regex: 'not valid JSON'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -198,6 +201,7 @@ test_group: {
     response: true
     outcome: FETCH_ERROR
     error_message_regex: 'Fetch budget exhausted'
+    error_code: [ ERROR_CODE_FETCH_BUDGET_EXHAUSTED ]
   }
 }
 
@@ -226,6 +230,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Insecure URL in fetch stack of secure asset'
+    error_code: [ ERROR_CODE_SECURE_ASSET_INCLUDES_INSECURE ]
   }
 }
 
@@ -262,6 +267,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Insecure URL in fetch stack of secure asset'
+    error_code: [ ERROR_CODE_SECURE_ASSET_INCLUDES_INSECURE ]
   }
 }
 
@@ -329,6 +335,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Insecure include file included by secure include file'
+    error_code: [ ERROR_CODE_SECURE_ASSET_INCLUDES_INSECURE ]
   }
 }
 
@@ -347,6 +354,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'not a valid URL'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -365,5 +373,6 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'non-HTTP URL'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }

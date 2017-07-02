@@ -82,6 +82,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'no package_name field'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -100,6 +101,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'sha256_cert_fingerprints'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -119,6 +121,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'not an array'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -138,6 +141,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'sha256_cert_fingerprints'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -157,6 +161,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'invalid package name'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -176,6 +181,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'invalid package name'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -195,6 +201,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'must contain at least one certificate'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -214,6 +221,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'malformed cert'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -233,6 +241,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'malformed cert'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -252,6 +261,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'malformed cert'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -272,6 +282,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'malformed cert'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -292,6 +303,6 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'malformed cert'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
-

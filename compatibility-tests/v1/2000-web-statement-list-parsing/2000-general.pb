@@ -99,6 +99,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Could not parse (manifest|statement list)'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
     response: true
   }
 
@@ -117,6 +118,7 @@ test_group: {
     response: true
     outcome: FETCH_ERROR
     error_message_regex: 'Could not parse (manifest|statement list)'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 
 }
@@ -136,6 +138,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'invalid field'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
     # No response field because we expect the list to be empty.
   }
 }
@@ -180,6 +183,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'not valid JSON'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -197,6 +201,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'not valid JSON'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -217,6 +222,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'not valid JSON'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -235,6 +241,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'expected a single array'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -252,6 +259,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Could not parse (manifest|statement list)'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -269,6 +277,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'no target specified'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -286,6 +295,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'no relation'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -304,6 +314,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'not an object'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -322,5 +333,6 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'unrecognized namespace'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }

@@ -131,6 +131,7 @@ test_group: {
     outcome: FETCH_ERROR
     response: false
     error_message_regex: "404 Not Found"
+    error_code: [ ERROR_CODE_FETCH_ERROR ]
   }
 
   check_statements_tests: {
@@ -387,6 +388,7 @@ test_group: {
     outcome: FETCH_ERROR
     response: true
     error_message_regex: 'not valid JSON'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -435,6 +437,7 @@ test_group: {
     outcome: FETCH_ERROR
     response: false
     error_message_regex: 'not valid JSON'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 
   check_statements_tests: {
@@ -452,6 +455,7 @@ test_group: {
     outcome: FETCH_ERROR
     response: true
     error_message_regex: 'not valid JSON'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -477,6 +481,7 @@ test_group: {
     outcome: FETCH_ERROR
     response: false
     error_message_regex: 'not valid JSON'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -518,6 +523,7 @@ test_group: {
     outcome: FETCH_ERROR
     response: true
     error_message_regex: 'Fetch budget exhausted'
+    error_code: [ ERROR_CODE_FETCH_BUDGET_EXHAUSTED ]
   }
 }
 
@@ -554,6 +560,7 @@ test_group: {
     outcome: FETCH_ERROR
     response: true
     error_message_regex: 'Could not parse (manifest|statement list)'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -676,6 +683,7 @@ test_group: {
     response: false
     outcome: FETCH_ERROR
     error_message_regex: 'no sha256_cert_fingerprints field in android app asset descriptor'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -701,4 +709,3 @@ test_group: {
     }
   }
 }
-

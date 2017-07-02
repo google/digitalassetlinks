@@ -195,6 +195,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'no relation array specified'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -221,6 +222,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -247,6 +249,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'not an array'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -273,6 +276,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'invalid relation'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -299,6 +303,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid \'detail\' field in relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -325,6 +330,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid \'kind\' field in relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -351,6 +357,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid \'kind\' field in relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -377,6 +384,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid \'kind\' field in relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -403,6 +411,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -429,6 +438,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -455,6 +465,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -481,6 +492,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -507,6 +519,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid \'detail\' field in relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -533,6 +546,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid \'detail\' field in relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -559,6 +573,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid \'detail\' field in relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -585,6 +600,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid \'detail\' field in relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -611,6 +627,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid \'detail\' field in relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -637,6 +654,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid \'detail\' field in relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -663,6 +681,7 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid \'kind\' field in relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }
 
@@ -689,5 +708,6 @@ test_group: {
     }
     outcome: FETCH_ERROR
     error_message_regex: 'Invalid \'kind\' field in relation string'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 }

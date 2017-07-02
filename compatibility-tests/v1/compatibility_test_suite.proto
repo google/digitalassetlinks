@@ -81,6 +81,10 @@ message CheckTestCase {
   // If the expected outcome is not a full success, the error or notification
   // message in the response should match this optional regular expression.
   optional string error_message_regex = 5;
+
+  // If the expected outcome is FETCH_ERROR, the error_code in the response
+  // should contain this set of error codes.
+  repeated google.digitalassetlinks.v1.ErrorCode error_code = 6;
 }
 
 // A single test case for testing the List() API.
@@ -100,6 +104,10 @@ message ListTestCase {
   // If the expected outcome is not a full success, the error or notification
   // message in the response should match this optional regular expression.
   optional string error_message_regex = 5;
+
+  // If the expected outcome is FETCH_ERROR, the error_code in the response
+  // should contain this set of error codes.
+  repeated google.digitalassetlinks.v1.ErrorCode error_code = 6;
 }
 
 // A group of test cases that all share the same set of mock web and Android

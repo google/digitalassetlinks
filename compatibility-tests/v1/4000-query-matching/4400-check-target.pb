@@ -117,6 +117,7 @@ test_group: {
     outcome: FETCH_ERROR
     response: false
     error_message_regex: 'no sha256_cert_fingerprints field in android app asset descriptor'
+    error_code: [ ERROR_CODE_MALFORMED_CONTENT ]
   }
 
   check_statements_tests: {
@@ -336,4 +337,3 @@ test_group: {
     response: false
   }
 }
-
