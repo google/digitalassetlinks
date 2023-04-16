@@ -50,7 +50,7 @@ model).
 
 **Web site descriptors** are as follows:
 
-```json
+```yaml
 // if no port given, default port for scheme is assumed
 { "namespace": "web",
   "site": "http[s]://{fully-qualified domain}{:optional port}"
@@ -122,7 +122,7 @@ whose owner is making the statement is implicitly the first one (the "source")
 in the relation; we may in the future allow the source asset to be specified
 explicitly. The statement is a JSON string with the following structure:
 
-```json
+```yaml
 {
   "relation": ["{kind}/{detail}", ...],
   "target" : { AssetDescriptor }
@@ -223,7 +223,7 @@ Google Maps app has the App ID 585027354.
 **Statement location:** As part of their signed bundle, iOS apps contain an
 `Info.plist` file.  Asset Link statements are placed inside this file:
 
-```json
+```xml
 <key>AssetLinkManifest</key>
 <string>
   {JSON array of statements}
